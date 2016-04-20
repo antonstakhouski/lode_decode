@@ -1,19 +1,10 @@
 /*
-
 Created by Evgeny Baskakov, 2004
-
-
 Original LODE RUNNER level decoder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 Cell code: XY, where X - row code, Y - item code.
-
 Value interval for Y: [0, F] (16 possible values).
-
-
 ENCODING TABLE:
-
 0.  0: ladder     1.  0: concrete   2.  0: brick      3.  0: player
     1: concrete       1: ladder         1: empty          1: enemy
 Ex  2: brick      Bx  2: empty      7x  2: ladder     Dx  2: N/A
@@ -30,7 +21,6 @@ Ex  2: brick      Bx  2: empty      7x  2: ladder     Dx  2: N/A
     D: N/A            D: N/A            D: N/A            D: bar
     E: N/A            E: N/A            E: N/A            E: chest
     F: N/A            F: N/A            F: N/A            F: empty-2
-
 4.  0: enemy      5.  0: N/A        6.  0: N/A        7.  0: empty-2
     1: player         1: N/A            1: N/A            1: chest
 Bx  2: N/A        Ex  2: N/A        5x  2: N/A        7x  2: bar
@@ -47,7 +37,6 @@ Bx  2: N/A        Ex  2: N/A        5x  2: N/A        7x  2: bar
     D: brick-2        D: brick          D: brick          D: N/A
     E: empty-2        E: concrete       E: concrete       E: enemy
     F: chest          F: ladder         F: ladder         F: player
-
 8.  0: N/A        9.  0: N/A        A.  0: chest      B.  0: N/A
     1: N/A            1: N/A            1: empty-2        1: N/A
 2x  2: N/A        3x  2: player     9x  2: brick-2    1x  2: N/A
@@ -64,7 +53,6 @@ Bx  2: N/A        Ex  2: N/A        5x  2: N/A        7x  2: bar
     D: ladder         D: empty-2        D: N/A            D: empty
     E: empty          E: brick-2        E: player         E: ladder
     F: brick          F: bar            F: enemy          F: concrete
-
 C.  0: N/A        D.  0: N/A        E.  0: brick-2    F.  0: chest
     1: N/A            1: N/A            1: bar            1: empty-2
 Cx  2: player     8x  2: N/A        6x  2: chest      Cx  2: brick-2
@@ -81,10 +69,7 @@ Cx  2: player     8x  2: N/A        6x  2: chest      Cx  2: brick-2
     D: empty-2        D: ladder         D: enemy          D: N/A (empty?)
     E: brick-2        E: empty          E: N/A            E: player
     F: bar            F: brick          F: N/A            F: enemy
-
-
 ENCODING METHOD:
-
 0->1: odd/even positions are swapped
 1->2: odd/even positions are swapped; then odd/even position pairs are swapped
 2->3: 8-element tuples are swapped
@@ -105,7 +90,6 @@ D->E: 8-element tuples are swapped;
       then in each 8-element tuple position pairs are swapped: 1st and 2nd, 3rd and 4th;
       then odd/event positions are swapped
 E->F: odd/even positions are swapped
-
 */
 
 
@@ -528,15 +512,15 @@ void print_level() {
    } else {
       char *ch;
 
-      printf("    ");
+      //printf("    ");
 
-      for(j = 0; j < COLUMNS_NUM; j++)
-         printf(" %02d", j);
+      /*for(j = 0; j < COLUMNS_NUM; j++)
+         printf(" %02d", j);*/
 
-      printf("\n");
+      //printf("\n");
 
       for(i = 0; i < COLUMN_SIZE; i++) {
-         printf("#%02d ", i);
+         //printf("#%02d ", i);
 
          for(j = 0; j < COLUMNS_NUM; j++) {
             switch(level[i][j]) {
