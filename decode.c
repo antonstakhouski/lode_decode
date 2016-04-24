@@ -510,7 +510,7 @@ void print_level() {
          printf("\n");
       }
    } else {
-      char *ch;
+      char ch;
 
       //printf("    ");
 
@@ -524,21 +524,21 @@ void print_level() {
 
          for(j = 0; j < COLUMNS_NUM; j++) {
             switch(level[i][j]) {
-               case LADDER:    ch = "├─┤"; break;
-               case CONCRETE:  ch = "███"; break;
-               case BRICK:     ch = "▒▒▒"; break;
-               case EMPTY:     ch = "..."; break;
-               case GOLD:      ch = " o "; break;
-               case EMPTY_2:   ch = ".?."; break;
-               case BRICK_2:   ch = "▓?▓"; break;
-               case POLE:      ch = "───"; break;
-               case PLAYER:    ch = " P "; break;
-               case ENEMY:     ch = " E "; break;
+               case LADDER:    ch = 'L'; break;
+               case CONCRETE:  ch = 'C'; break;
+               case BRICK:     ch = 'B'; break;
+               case EMPTY:     ch = 'E'; break;
+               case GOLD:      ch = 'G'; break;
+               case EMPTY_2:   ch = '1'; break;
+               case BRICK_2:   ch = '2'; break;
+               case POLE:      ch = '3'; break;
+               case PLAYER:    ch = 'P'; break;
+               case ENEMY:     ch = '4'; break;
                default:
                   assert(0);
             }
 
-            printf("%s", ch);
+            printf("%c", ch);
          }
 
          printf("\n");
